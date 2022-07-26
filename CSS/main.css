@@ -1,0 +1,434 @@
+/* 
+February 17, 2022
+Extreme Audio CSS File 
+]*/
+
+:root {
+  --extreme-red-color: #f81b00;
+  --dark-grey: #212427; /* Dark grey color used for readable text */
+  --jet: #343434; /* Jet black color for largest selection section */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+html {
+  height: 100%;
+}
+
+/* Hero Image Translation */
+@keyframes fade-in {
+  from {
+    opacity: 0; /* No Opacity so it cannot be seen */
+  }
+  to {
+    opacity: 1; /* Opacity is added to become visible again */
+  }
+}
+.transition-effect {
+  animation: fade-in 2s; /* Call the keyframes animation and configure how long the animation will take */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.main-nav {
+  display: flex; /* Flex Container */
+  flex-flow: row; /* Make the elements flow in a row */
+  margin-right: 2.5em; /* Push the text over from the right side of the page */
+  font-size: 1.5em;
+}
+
+/* Specific Elements in navigation */
+.main-nav > li > a {
+  text-decoration: none; /* Remove the underlined text */
+  font-family: "Poppins", sans-serif; /* Google font */
+  color: var(--extreme-red-color);
+}
+.main-nav > li > a:visited {
+  color: var(--extreme-red-color);
+}
+
+nav {
+  align-self: end; /* Place the nav at the end of the flexbox container */
+}
+
+li {
+  margin: 10px;
+  list-style-type: none;
+}
+
+/* #logo-and-slogan {
+  margin: 0 0 0 2em;
+} */
+
+#main-logo:hover {
+  cursor: pointer;
+}
+
+main {
+  width: 100vw;
+  margin: auto;
+}
+
+.body-text {
+  font-family: "Montserrat", sans-serif; /* Change the font for the main content of the website */
+}
+
+p {
+  margin: 10px; /* Indent the paragraphs and separate them from each other */
+}
+
+.hero-image-container {
+  display: flex; /* Flex container for the hero image */
+  /* Center the arrows */
+  justify-content: center;
+  align-items: center;
+  margin: 1vh auto 0;
+  overflow: hidden; /* Hide the overflow */
+  border-top: 3px solid var(--extreme-red-color);
+  /* border-bottom: 3px solid var(--extreme-red-color); */
+}
+
+#hero-image {
+  height: 80vh;
+  width: 100vw;
+  z-index: -1; /* Make the hero image appear under the arrows */
+}
+
+.arrows {
+  display: grid; /* Grid around the hero image so the arrows can be placed */
+  /* Grid Configuration */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  z-index: 1000; /* Place the arrows on top of everything on the screen */
+  position: absolute; /* allows the buttons to float */
+  height: 80vh; /* Make the grid the same height as the hero image */
+  width: 100vw; /* Make the grid the whole length of the hero image */
+}
+
+#arrow-next {
+  z-index: 1000;
+  /* Grid Placement */
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  /* Size Properties */
+  height: 50px;
+  width: 50px;
+  margin: auto 0 5px auto;
+  background-color: rgba(33, 32, 32, 0.502); /* !! New Color */
+  border-radius: 0.5em;
+}
+
+#arrow-next:hover {
+  cursor: pointer;
+}
+
+#back-arrow {
+  /* Grid-Placement */
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  /* Size Properties */
+  height: 50px;
+  width: 50px;
+  margin: auto auto 5px 0;
+  background-color: rgba(33, 32, 32, 0.502); /* !! New Color */
+  border-radius: 0.5em;
+}
+
+#back-arrow:hover {
+  cursor: pointer;
+}
+
+#hours-list > li {
+  font-family: "Montserrat", sans-serif; /* Change the font for the hours of operation */
+}
+
+section {
+  margin-bottom: 2.5em;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  margin: 1em auto;
+}
+
+/* Class for the section of the page that boasts about large inventory */
+#largest-inventory-container {
+  display: flex;
+  width: 100vw;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  background: #ed213a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #93291e,
+    #ed213a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #93291e,
+    #ed213a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#largest-inventory {
+  color: white;
+  font-size: 2em;
+}
+
+article {
+  margin: 0 auto;
+  width: 80%;
+  color: var(--dark-grey); /* Dark grey color for readable text */
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.brands {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 40px;
+}
+
+/* Specific Logos */
+#alpine-logo {
+  flex-basis: 100px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#audio-control-logo {
+  flex-basis: 100px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#clarion-logo {
+  flex-basis: 175px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#rockford-fosgate-logo {
+  flex-basis: 150px;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+}
+
+#jvc-logo {
+  flex-basis: 100px;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+}
+
+#kenwood-logo {
+  flex-basis: 100px;
+  flex-grow: 1.5;
+  flex-shrink: 1;
+}
+
+#kicker-logo {
+  flex-basis: 100px;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+}
+
+#massive-audio-logo {
+  flex-basis: 76px;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+}
+
+#pheonix-gold-logo {
+  flex-basis: 248px;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+}
+
+#pioneer-logo {
+  flex-basis: 75px;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+}
+
+#sony-logo {
+  flex-basis: 110px;
+  flex-grow: 0.3; /* This starts to look bad with bigger displays */
+}
+
+#stinger-logo {
+  flex-basis: 150px;
+  flex-grow: 0.5;
+}
+
+/* ! -------------------------------------------------- Products Page -------------------------------------------------- */
+#products-background {
+  border-top: 3px solid var(--extreme-red-color);
+  background-image: url("../Images/system_builder/products-background.png");
+  height: 350px;
+  margin: 1vh auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.products-title {
+  color: rgb(235, 235, 235);
+  font-size: 3em;
+}
+
+#build-your-system-title {
+  margin-top: 3em;
+}
+
+#selecting-your-equipment-body {
+  font-size: 1.2em;
+}
+
+.product-card {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  margin: 1em;
+  border-radius: 15px;
+}
+
+.product-card > h3 {
+  margin: 10px;
+}
+
+.pick-a-system-container {
+  display: flex;
+  width: 100%;
+  border-bottom: 3px solid red;
+  justify-content: space-evenly;
+}
+
+.pick-a-system-title {
+  text-align: center;
+}
+
+.container-picked {
+  /* Custom container for the elements at the top */
+  height: 175px;
+  width: 150px;
+}
+
+.products {
+  /* * This is for all of the products */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: move;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.dragging {
+  opacity: 50%;
+}
+
+#mobile-nav-toggle {
+  display: none;
+}
+
+/* * Classes to add/remove from elements for mobile */
+.hide-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
+  #mobile-nav-toggle {
+    display: block;
+    height: 35px;
+    width: 35px;
+    align-self: center;
+    margin-left: 1em;
+    cursor: pointer;
+  }
+
+  #mobile-nav {
+    text-align: center;
+    font-size: 1.5em;
+    z-index: 100000000; /* Put this above everything else */
+    position: absolute; /* Position absolute must be added for z-index to work */
+    background-color: white;
+    width: 100vw;
+    height: 400px;
+    cursor: pointer;
+    border-bottom: 3px solid var(--extreme-red-color);
+  }
+
+  #mobile-nav > li {
+    margin: 2em;
+  }
+
+  #mobile-nav > li > a {
+    text-decoration: none;
+    color: red;
+    font-size: 1.5em;
+  }
+
+  #main-logo {
+    align-self: center;
+  }
+
+  #largest-inventory {
+    text-align: center;
+  }
+
+  #main-logo {
+    width: 300px;
+  }
+
+  .brands {
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+
+  .logo {
+    width: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pick-a-system {
+    display: none;
+  }
+}
